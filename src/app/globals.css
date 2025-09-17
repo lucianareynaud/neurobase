@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #D4A574; /* Terracota suave */
+  --secondary: #E8DCC0; /* Bege claro */
+  --accent: #B8956A; /* Terra mais escuro */
+  --background: #FDFCFA; /* Off-white quente */
+  --text-primary: #2C2825; /* Marrom escuro */
+  --text-secondary: #6B6560; /* Cinza quente */
+  --border: #E5E0D8; /* Bege neutro */
+  --success: #7A8471; /* Verde terra */
+  --warning: #C49464; /* Laranja terra */
 }
 
 @theme inline {
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark mode palette tuned from brand colors */
+.dark {
+  --background: #151311; /* deep warm charcoal */
+  --text-primary: #F4F1EE;
+  --text-secondary: #C9C2BB;
+  --border: #3C3732;
+  /* keep brand hues consistent in dark */
+  --primary: #D4A574;
+  --secondary: #3A332C;
+  --accent: #B8956A;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
 }
